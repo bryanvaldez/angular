@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="uni">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="profeCtrl as profe">
+		<h1>Profesor</h1>
+		<h4>{{ profesor.nombre }}</h4>
+		<hr>
+		<div class="row">
+		    <div class="col-sm-3">
+		        <section class="panel">
+		            <div class="panel-body" align="center">
+		                <img ng-src="{{ profesor.foto }}" class="img-circle" alt="" width="150px" height="150px">
+		            </div>
+		        </section>
+		    </div>
+		    <div class="col-sm-9">
+		        <section class="panel">
+		            <div class="panel-body">
+		                {{ profesor.bio }}
+		                <br>
+		                <br>
+		                <strong>Edad:</strong> {{profesor.edad}}
+		                <br> 
+		                <button class="btn btn-primary" ng-click="EditarProfesor()">Editar</button>  
+		            </div>
+		        </section>
+		    </div>
+		</div>
+		<div class="row" ng-show="mostrarCaja">
+			<div class="col-sm-9">
+				<section class="panel">
+					<div class="pael-body">						
+						<span>Nombre:</span><input type="text" class="form-control" ng-model="editando.nombre">
+						<span>edad:</span><input type="text" class="form-control" ng-model="editando.edad">
+						<span>bio:</span><textarea class="form-control" ng-model="editando.bio" rows="3"></textarea>
+						<br>
+						<button class="btn btn-primary" ng-click="GuardarCambios()">Guardar</button>
+						<button class="btn btn-danger" ng-click="CancelarCambios()">Cancelar</button>   
+					</div>
+				</section>				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
