@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ng-options</title>
+
+
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/app2.js"></script>
+
+        
+    </head>    
+    <body>
+
+        <div class="container" ng-controller="listadoCtrl">
+            
+            <h1>ng-options</h1>
+            <h4>Repeticiones para elementos</h4>
+            <hr>
+            Seleccion del pais:{{paisSeleccionado}}
+            <select ng-model="paisSeleccionado" class="form-control">
+                <option value="">Seleccione</option>
+                <option value="{{pais.id}}" ng-repeat="pais in paises">{{pais.nombre}}</option>
+            </select>
+
+            <br>
+            Seleccion del Pais:{{paisSeleccionado}}
+            <select ng-model="paisSeleccionado" class="form-control" ng-options="pais.id as pais.nombre for pais in paises">
+            </select>
+
+
+        </div><!-- fin del listadoCtrl -->
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>NG-REPEAT - ng-repeat</title>
+
+
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/filtro.js"></script>
+
+
+    </head>    
+    <body>
+
+        <div class="container" ng-controller="listadoCtrl">
+            
+            <h1>Filtros</h1>
+            <h4>Para el ng-repeat</h4>
+            <hr>
+            <div class="row">
+                Busqueda:
+                <br>
+                <input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Ingrese lo que desee=a buscar.">
+                <br>
+                Sexo:
+                <br>
+                <select ng-model="busqueda.sexo" class="form-control">
+                    <option value="">Cualquiera</option>
+                    <option value="mujer">Mujeres</option>
+                    <option value="hombre">Hombres</option>
+                </select>
+                <br>                
+            </div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Avatar</th>
+                    <th><a class="puntero" ng-click="columna='nombre'; reverse = !reverse;">Nombre</a></th>
+                    <th><a class="puntero" ng-click="columna='sexo'; reverse = !reverse;">Sexo</a></th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                </tr>
+                <tr ng-repeat="persona in personas | filter:busqueda | orderBy:columna:reverse">
+                    <td><img ng-src="img/{{persona.avatar}}" class="avatar img-circle animated tada"></td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.sexo}}</td>
+                    <td>{{persona.telefono}}</td>
+                    <td>{{persona.celular}}</td>
+                </tr>
+            </table>
+
+        </div><!-- fin del listadoCtrl -->
+
+    </body>
+</html>

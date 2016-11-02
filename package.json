@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.5.8",
+    "animate": "^1.0.0",
+    "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
