@@ -50,7 +50,39 @@
                     <td>{{persona.celular}}</td>
                 </tr>
             </table>
-
+            <br>
+            <br>
+            <div class="row">
+                Filtro completo con botton:
+                <br>
+                    Nombre: <input type="text" ng-model="query.nombre" class="form-control" placeholder="busqueda">
+                    Sexo:                 
+                    <select ng-model="query.sexo" class="form-control">
+                        <option value="">Cualquiera</option>
+                        <option value="mujer">Mujeres</option>
+                        <option value="hombre">Hombres</option>
+                    </select>
+                    Telefono: <input type="text" ng-model="query.telefono" class="form-control" placeholder="busqueda">
+                    Celular: <input type="text" ng-model="query.celular" class="form-control" placeholder="busqueda">
+                <br>
+                <button type="button" ng-click="search()">Buscar</button>
+            </div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Avatar</th>
+                    <th><a class="puntero" ng-click="columna='nombre'; reverse = !reverse;">Nombre</a></th>
+                    <th><a class="puntero" ng-click="columna='sexo'; reverse = !reverse;">Sexo</a></th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                </tr>
+                <tr ng-repeat="persona in personas | filter:searchQuery | orderBy:columna:reverse">
+                    <td><img ng-src="img/{{persona.avatar}}" class="avatar img-circle animated tada"></td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.sexo}}</td>
+                    <td>{{persona.telefono}}</td>
+                    <td>{{persona.celular}}</td>
+                </tr>
+            </table>            
         </div><!-- fin del listadoCtrl -->
 
     </body>

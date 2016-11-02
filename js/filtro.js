@@ -90,6 +90,10 @@ $scope.personas=[
       }
     ];
 
+    $scope.search=function(){
+        $scope.searchQuery = angular.copy($scope.query);
+        $scope.usersToFilter=$scope.personas;
+    }
 
 
 }]);
