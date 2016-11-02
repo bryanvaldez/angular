@@ -67,11 +67,13 @@
                 <br>
                 <button type="button" ng-click="search()">Buscar</button>
             </div>
+            <dir ng-hide="(personas| filter:searchQuery).length">No se encontraron datos {{ (personas| filter:searchQuery).length }}</dir>
+            <dir ng-show="(personas| filter:searchQuery).length">Personas {{ (personas| filter:searchQuery).length }}</dir> 
             <table class="table table-striped">
                 <tr>
                     <th>Avatar</th>
                     <th><a class="puntero" ng-click="columna='nombre'; reverse = !reverse;">Nombre</a></th>
-                    <th><a class="puntero" ng-click="columna='sexo'; reverse = !reverse;">Sexo</a></th>
+                    <th><a class="puntero" ng-click="columna='sexo'; reverse = !reverse;">Sexo</a></th> 
                     <th>Telefono</th>
                     <th>Celular</th>
                 </tr>
@@ -82,7 +84,7 @@
                     <td>{{persona.telefono}}</td>
                     <td>{{persona.celular}}</td>
                 </tr>
-            </table>            
+            </table>           
         </div><!-- fin del listadoCtrl -->
 
     </body>
