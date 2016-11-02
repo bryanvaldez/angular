@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="ejemplosApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ng-include</title>
+
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/include.js"></script>
+        
+    </head>    
+    <body>
+
+        <div class="container" ng-controller="mainCtrl">
+            
+            <h1>ng-include</h1>
+            <h4>Data dinámica</h4>
+            <hr>
+            <div ng-include="tblProfesores" scope="" onload=""></div>
+            <br>
+
+        </div><!-- fin del listadoCtrl -->
+
+    </body>
+</html>
