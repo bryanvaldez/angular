@@ -12,3 +12,9 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
   	} 
 
 }]);
+//filtro personalizado telefono 
+app.filter('telefono', function(){
+	return function(numero){
+		return numero.substring(0,4) + "-" + numero.substring(4); 
+	}
+})
