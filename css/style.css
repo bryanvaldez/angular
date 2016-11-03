@@ -5,3 +5,10 @@
 .puntero{
 	cursor: pointer;
 }
+
+.navbar{
+  height: 50px;
+}
+body{
+  padding-top: 50px;
+}
