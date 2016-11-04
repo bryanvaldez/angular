@@ -1,4 +1,25 @@
 <h1>Alumno</h1>
-<h4>Nombre temporal</h4>
+<h4>{{ alumno.nombre }}</h4>
 <hr>
-<p>{{ mensaje }}</p>
+<div class="row">
+	<form>
+		Codigo:
+		<br>
+		<input type="text" class="form-control" ng-model="alumno.codigo" readonly="readonly">
+		<br>
+		Nombre:
+		<br>
+		<input type="text" class="form-control" ng-model="alumno.nombre">
+		<br>
+		Telefono:
+		<br>
+		<input type="text" class="inputhide form-control" ng-model="alumno.telefono" ui-mask="{{ telefonoMask }}"  ui-options="{clearOnBlur: false}" type="text" >
+		<br>
+		Direccion:
+		<br>
+		<textarea class="form-control" ng-model="alumno.direccion" rows="5"></textarea>
+		<br>
+		<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+	</form>			
+</div>
+

@@ -12,3 +12,8 @@
 body{
   padding-top: 50px;
 }
+
+.inputhide::-webkit-input-placeholder {color:#fff;}
+.inputhide::-moz-placeholder          {color:#fff;} /* Firefox 19+ */
+.inputhide:-moz-placeholder           {color:#fff;} /* Firefox 18- */
+.inputhide:-ms-input-placeholder      {color:#fff;}
