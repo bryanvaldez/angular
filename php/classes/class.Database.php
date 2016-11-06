@@ -56,7 +56,7 @@ class Database{
 	}
 
 	// Metodo que revisa el String SQL
-	private function es_string($sql){
+	private static function es_string($sql){
 		if (!is_string($sql)) {
 			trigger_error('class.Database.inc: $SQL enviado no es un string: ' .$sql);
 			return false;
@@ -69,7 +69,7 @@ class Database{
 	// 		Esta funcion esta pensada para SQLs, 
 	// 		que retornen unicamente UNA sola línea
 	// ==================================================
-	public function get_Row($sql){
+	public static function get_Row($sql){
 		
 		if(!self::es_string($sql))
 			exit();
@@ -107,7 +107,7 @@ class Database{
 	// 	Funcion que ejecuta el SQL y retorna un jSon
 	// 	data: [{...}] con N cantidad de registros
 	// ==================================================
-	public function get_json_rows($sql){
+	public static function get_json_rows($sql){
 
 		if(!self::es_string($sql))
 			exit();
@@ -162,7 +162,7 @@ class Database{
 	// 	Funcion que ejecuta el SQL y retorna un valor
 	// 	Ideal para count(*), Sum, cosas que retornen una fila y una columna
 	// ====================================================================
-	public function get_valor_query($sql,$columna){
+	public static function get_valor_query($sql,$columna){
 
 		if(!self::es_string($sql,$columna))
 			exit();
