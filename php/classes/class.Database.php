@@ -190,7 +190,7 @@ class Database{
 	// ====================================================================
 	// 	Funcion que ejecuta el SQL de inserción, actualización y eliminación
 	// ====================================================================
-	public function ejecutar_idu($sql){
+	public static function ejecutar_idu($sql){
 
 		if(!self::es_string($sql))
 			exit();
